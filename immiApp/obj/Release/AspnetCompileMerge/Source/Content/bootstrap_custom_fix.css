@@ -1,0 +1,40 @@
+﻿.text-left.control-label {
+    text-align:left !important;
+}
+.form-horizontal .form-group {
+margin-left:0;
+}
+
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.popover{width:auto!important; max-width: 50vw; z-index:9999;top:inherit;}
+ .popover h1, .popover h2, .popover h3, .popover h4,.popover p {
+     margin:1px;
+  }
+ .helptext-wrapper {
+    overflow: scroll;
+    max-height: 50vh;
+}
+
+@media screen and (max-width: 375px) {
+    .popover {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .width-75 .modal-dialog {
+        width:75%;
+    }    
+}
+
+.btn-sm.btn-primary {
+    color: #ffffff;
+    background-color: #193963;
+    border-color: #357ebd;
+    padding: 8px 10px;
+}

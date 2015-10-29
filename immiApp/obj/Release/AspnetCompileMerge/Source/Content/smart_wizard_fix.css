@@ -1,0 +1,19 @@
+.swMain .stepContainer{
+    display: inline-table !important;
+}
+.swMain .stepContainer div.content{
+    position: relative !important;
+    height: auto !important;
+}
+.swMain .stepContainer,.swMain div.actionBar{
+    width: 100%;
+}
+
+div#wizard.swMain .buttonNext, div#wizard.swMain .buttonFinish, div#wizard.swMain .buttonPrevious {
+    background-color: #193963;
+    border: 1px solid #193963;
+    color:#fff;    
+}
+div#wizard.swMain .buttonDisabled {
+    background-color:#BAC3CF;
+}

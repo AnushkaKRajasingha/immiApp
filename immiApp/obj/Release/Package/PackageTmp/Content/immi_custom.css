@@ -1,0 +1,47 @@
+.wrap.container{
+    /*width: 980px;*/
+}
+ul.anchor{
+    display: none !important;
+}
+.swMain .stepContainer div.content {    
+    width: 100% !important;
+}
+.swMain .stepContainer .StepTitle,h3.popover-title
+{
+    color: #fff !important;
+    background-color:#193963 !important;
+}
+.swMain .stepContainer div.content .content{
+   /* background-color: yellow;*/
+    box-sizing: border-box;
+}
+.swMain .stepContainer div.content .content h2{
+    line-height: 1.2em;
+    margin: 0.5em 0;
+}
+.swMain .stepContainer div.content .content .content{
+  /*  background-color: pink;*/
+    width: 100%;
+}
+.swMain .stepContainer div.content .content .content h3
+{
+    line-height: 1em;
+    margin: 0.3em 0;
+}
+
+.swMain .stepContainer div.content .content .content .content{
+    /*background-color: aqua;*/
+}
+.left p{
+    margin: 0;
+}
+.row.wc_row{
+    margin-left: 10px;
+}
+
+.column textarea{
+    width: 100%;
+}
+.cell.wc_row .left:empty{display: none;}
+div.column:empty{}
