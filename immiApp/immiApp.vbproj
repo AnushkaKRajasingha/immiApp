@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -196,14 +198,31 @@
     <Compile Include="Controllers\ApplicationController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
     <Compile Include="Controllers\ModalDialogController.vb" />
+    <Compile Include="Controllers\NationalIdController.vb" />
+    <Compile Include="Controllers\OtherNameController.vb" />
+    <Compile Include="Controllers\OtherPassportController.vb" />
+    <Compile Include="Controllers\PeopleController.vb" />
     <Compile Include="Controllers\PopoverController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="immiAppDbContext.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
+    <Compile Include="Models\ApplicantModels.vb" />
+    <Compile Include="Models\ApplicationModels.vb" />
+    <Compile Include="Models\CustomControls\CustomCtrlCountry.vb" />
+    <Compile Include="Models\CustomControls\CustomCtrlLeagalStatus.vb" />
+    <Compile Include="Models\CustomControls\CustomCtrlMoedels.vb" />
+    <Compile Include="Models\CustomControls\CustomCtrlPassportCountry.vb" />
+    <Compile Include="Models\CustomControls\CustomCtrlRelationshipStatus.vb" />
+    <Compile Include="Models\CustomControls\CustomDateCtrlModels.vb" />
     <Compile Include="Models\IdentityModels.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
+    <Compile Include="Models\ModelDialogs\DialogModels.vb" />
+    <Compile Include="Models\PassportModels.vb" />
+    <Compile Include="Models\PeoplesModels.vb" />
     <Compile Include="Models\PopoverViewModels.vb" />
+    <Compile Include="Models\VisaModels.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -348,6 +367,21 @@
     <Content Include="Views\Application\step25.vbhtml" />
     <Content Include="Views\Application\step26.vbhtml" />
     <Content Include="Views\Application\step27.vbhtml" />
+    <Content Include="Views\Shared\CustomControls\custctrlDate.vbhtml" />
+    <Content Include="Views\Shared\CustomControls\custctrlCountries.vbhtml" />
+    <Content Include="Views\Shared\CustomControls\custctrlLeagaStatus.vbhtml" />
+    <Content Include="Views\Shared\CustomControls\custctrlPassportCountry.vbhtml" />
+    <Content Include="Views\Shared\CustomControls\custctrlRelationshipStatus.vbhtml" />
+    <Content Include="Views\Application\ListApps.vbhtml" />
+    <Content Include="Views\OtherName\Edit.vbhtml" />
+    <Content Include="Views\OtherName\Add.vbhtml" />
+    <Content Include="Views\OtherName\Delete.vbhtml" />
+    <Content Include="Views\OtherPassport\Add.vbhtml" />
+    <Content Include="Views\OtherPassport\Edit.vbhtml" />
+    <Content Include="Views\OtherPassport\Delete.vbhtml" />
+    <Content Include="Views\NationalId\Add.vbhtml" />
+    <Content Include="Views\NationalId\Edit.vbhtml" />
+    <Content Include="Views\NationalId\Delete.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -362,7 +396,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -381,10 +417,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\People\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

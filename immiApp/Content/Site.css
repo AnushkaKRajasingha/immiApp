@@ -22,3 +22,60 @@ select,
 textarea {
     max-width: 280px;
 }
+
+table {
+  color: #333;
+  font-family: sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  text-align: left;
+
+  border-spacing: 0;
+  border: 2px solid #975997;
+  margin: 5px auto;
+}
+    table.formdata ,table.form-group{
+    font-size: 1.1em;
+    }
+
+thead tr:first-child {
+  background: #193963;
+  color: #fff;
+  border: none;
+}
+
+th {font-weight: bold;}
+th:first-child, td:first-child {padding: 0 15px 0 20px;}
+
+thead tr:last-child th {border-bottom: 3px solid #ddd;}
+
+tbody tr:hover {background-color: #ffeeff;}
+
+tbody td {border-bottom: 1px solid #ddd;}
+
+td:last-child {
+   text-align: right;
+  padding-right: 10px;
+}
+td:last-child.tbl-cell-action {
+    width: 48px;
+}
+table.collection-table td.tbl-cell-action a {    
+    background-repeat:no-repeat;
+    text-indent:-1999px;
+    display:inline-block;
+    width:16px;
+    height:16px;
+    cursor:pointer;
+}
+a.edit {
+    background-image:url('http://www.anushkar.com/info/images/pencil.png');
+}
+a.delete {
+    background-image:url('http://www.anushkar.com/info/images/bin-closed-icon.png');
+}
+p.text-info,h1.StepTitle {
+text-transform:uppercase;
+width:100%;
+text-align:left;
+}

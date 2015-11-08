@@ -45,3 +45,9 @@ ul.anchor{
 }
 .cell.wc_row .left:empty{display: none;}
 div.column:empty{}
+.sr-only .form-group {
+    display: none;
+}
+tbody td, tbody th {
+    border: 1px solid;
+}

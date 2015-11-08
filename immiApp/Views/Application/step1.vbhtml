@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_StepLayout.vbhtml"
     ViewData("StepTitle") = "Terms and Conditions"
 End Code
-<form class="form-horizontal" role="form">
+<div class="form-horizontal">
     <div>
         <div class="form-group col-xs-12">
             <label class="control-label checkbox pull-left">
@@ -11,4 +11,4 @@ End Code
             </label>
         </div>
     </div>
-</form>
+</div>

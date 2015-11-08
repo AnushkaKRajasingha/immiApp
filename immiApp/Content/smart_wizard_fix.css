@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-div#wizard.swMain .buttonNext, div#wizard.swMain .buttonFinish, div#wizard.swMain .buttonPrevious {
+div#wizard.swMain .buttonNext, div#wizard.swMain .buttonFinish, div#wizard.swMain .buttonPrevious , .btn.btn-primary{
     background-color: #193963;
     border: 1px solid #193963;
     color:#fff;    

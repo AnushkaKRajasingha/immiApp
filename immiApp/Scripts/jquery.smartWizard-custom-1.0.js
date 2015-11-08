@@ -139,6 +139,10 @@ function SmartWizard(target, options) {
         _prepareSteps($this);
         // Show the first slected step
         _loadContent($this, $this.curStepIdx);
+
+        if ($this.options.oninitComplete != undefined) {
+            $this.options.oninitComplete();
+        }
     };
 
     var _prepareSteps = function($this) {
@@ -168,7 +172,11 @@ function SmartWizard(target, options) {
         var ajaxurl = $this.options.contentURL;
         var ajaxurl_data = $this.options.contentURLData;
         var hasContent = selStep.data('hasContent');
-        var stepNum = stepIdx+1;
+        var stepNum = stepIdx + 1;
+        var _submitData = ({ step_number: stepNum })
+        if ($this.options.ajaxDataToSubmit) {
+            _submitData = $.extend({ step_number: stepNum }, $this.options.ajaxDataToSubmit);
+        }
         if (ajaxurl && ajaxurl.length>0) {
             if ($this.options.contentCache && hasContent) {
                 _showStep($this, stepIdx);
@@ -176,7 +184,7 @@ function SmartWizard(target, options) {
                 var ajax_args = {
                     url: ajaxurl,
                     type: $this.options.ajaxType,
-                    data: ({step_number : stepNum}),
+                    data: _submitData,
                     dataType: "text",
                     beforeSend: function(){
                         $this.loader.show();
@@ -439,6 +447,23 @@ function SmartWizard(target, options) {
         this.elmStepContainer.height(height + 20);
     }
 
+    SmartWizard.prototype.reloadCurrentStep = function () {
+        var temp = this.options.contentCache;
+        this.options.contentCache = false;
+        _loadContent(this, this.curStepIdx);
+        this.options.contentCache = temp;
+    }
+
+    SmartWizard.prototype.reloadStep = function (StepIdx) {
+        var temp = this.options.contentCache;
+        this.options.contentCache = false;
+        _loadContent(this, StepIdx);
+        this.options.contentCache = temp;
+    }
+
+    SmartWizard.prototype.setAjaxSubmitData = function (data) {
+        this.options.ajaxDataToSubmit = data;
+    }
     _init(this);
 };
 
@@ -493,7 +518,8 @@ function SmartWizard(target, options) {
         onLeaveStep: null, // triggers when leaving a step
         onShowStep: null,  // triggers when showing a step
         onFinish: null,  // triggers when Finish button is clicked
-        includeFinishButton : true   // Add the finish button
+        includeFinishButton: true,   // Add the finish button
+        ajaxDataToSubmit : false
     };
 
 })(jQuery);
